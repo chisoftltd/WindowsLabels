@@ -3,7 +3,8 @@ import time
 
 window = Tk()
 window.title("Mikael First GUI Program")
-window.minsize(width=500, height=300)
+window.minsize(width=800, height=400)
+window.config(padx=20, pady=20)
 
 # label
 my_label = Label(text="This is a label", font=("Arial", 24, "bold"))
@@ -24,7 +25,8 @@ def button_clicked():
 
 
 button = Button(text="Shepherd Chinwe", command=button_clicked)
-button.place(x=200, y=55)
+button.grid(column=1, row=1)
+button.config(padx=50, pady=30)
 
 
 # Button
@@ -34,12 +36,12 @@ def new_button_clicked():
 
 
 new_button = Button(text="Benjamin Chinwe", command=new_button_clicked)
-new_button.place(x=450, y=0)
+new_button.grid(column=2, row=0)
 
 # Entry
-input = Entry(width=50)
+input = Entry(width=25)
 input.insert(END, string="Some text to begin with.")
 print(input.get())
-input.grid(column=550, row=150)
+input.grid(column=3, row=3)
 
 window.mainloop()
