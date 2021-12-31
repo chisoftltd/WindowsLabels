@@ -27,7 +27,19 @@ button = Button(text="Shepherd Chinwe", command=button_clicked)
 button.pack()
 
 # Entry
-input = Entry(width=10)
+input = Entry(width=50)
+input.insert(END, string="Some text to begin with.")
+print(input.get())
 input.pack()
+
+# Text
+text = Text(height=5, width=30)
+#Put cursor in textbox.
+text.focus()
+#Adds some text to begin with.
+text.insert(END, "Example of multi-line text entry.")
+print(text.get("1.0", END))
+text.pack()
+
 
 window.mainloop()
