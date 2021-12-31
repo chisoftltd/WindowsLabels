@@ -34,12 +34,31 @@ input.pack()
 
 # Text
 text = Text(height=5, width=30)
-#Put cursor in textbox.
+# Put cursor in textbox.
 text.focus()
-#Adds some text to begin with.
+# Adds some text to begin with.
 text.insert(END, "Example of multi-line text entry.")
 print(text.get("1.0", END))
 text.pack()
 
+
+# Spinbox
+def spinbox_used():
+    # gets the current value in spinbox.
+    print(spinbox.get())
+
+
+spinbox = Spinbox(from_=0, to=10, width=5, command=spinbox_used)
+spinbox.pack()
+
+
+# Scale
+# Called with current scale value.
+def scale_used(value):
+    print(value)
+
+
+scale = Scale(from_=0, to=100, command=scale_used)
+scale.pack()
 
 window.mainloop()
